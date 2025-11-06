@@ -59,7 +59,7 @@ h1 {
     font-style: normal;
     line-height: normal;
     margin: 10px 0 0 0;
-    transform: translateX(100px); /* 右に100px移動 */
+    transform: translateX(150px); /* 右に150px移動 */
 }
 
 /* -------------------------- 中央見出し -------------------------- */
@@ -106,14 +106,24 @@ h2 {
 }
 
 /* ------------------------ 3カラムレイアウト ------------------------ */
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .columns {
     display: grid;
     /* デスクトップでは左右を狭く固定、中央を広くするレイアウトにする */
-    grid-template-columns: 320px 1fr 320px; /* 左(固定) - 中央(流動) - 右(固定) */
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0px auto;
+    grid-template-columns: 300px minmax(600px, 1fr) 300px; /* 左(固定) - 中央(可変, 最小600px) - 右(固定) */
+    gap: 20px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
     align-items: start;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* カラム内の共通リセット */
@@ -140,10 +150,21 @@ h2 {
     .columns { grid-template-columns: 1fr; max-width: 95%; padding: 0 0px; }
 }
 
-/* カラム毎の余白（デスクトップ向け） */
-.columns .col-left { padding-left: 20px; }
-.columns .col-center { padding: 0 20px; }
-.columns .col-right { padding-right: 20px; }
+/* カラム毎の余白（デスクトップ向け）記事間の余白 */
+.columns .col-left { 
+    padding-right: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+.columns .col-center { 
+    padding: 0 20px;
+    width: 100%;
+}
+.columns .col-right { 
+    padding-left: 20px;
+    width: 100%;
+    max-width: 300px;
+}
 
 /* デスクトップ表示で右カラムを上に詰める（必要に応じて値を調整） */
 @media (min-width: 1000px) {
