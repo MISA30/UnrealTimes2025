@@ -148,7 +148,7 @@ h2 {
 /* デスクトップ表示で右カラムを上に詰める（必要に応じて値を調整） */
 @media (min-width: 1000px) {
     .columns .col-right {
-        margin-top: var(--col-right-offset); /* 値は :root の --col-right-offset で制御 */
+        margin-top: -300px; /* 300px上に詰める */
     }
 }
 
