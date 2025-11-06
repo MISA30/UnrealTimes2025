@@ -1,0 +1,299 @@
+
+/* --------------------- 基本テキスト・日付 --------------------- */
+.date {
+    font-family: Candal;
+    font-size: 25px;
+    font-style: normal;
+    line-height: normal;
+    margin-left: 300px;
+}
+
+/* ---------------------- カスタム変数 / ユーティリティ ---------------------- */
+:root{
+    /* 右カラムをデスクトップで上に詰める量（px, 負の値で上へ） */
+    --col-right-offset: -40px;
+    /* 基本の間隔単位（必要なら基準にしてユーティリティを拡張可能） */
+    --spacing-unit: 10px;
+}
+
+/* 簡易ユーティリティ：上マージン調整（必要に応じてクラスを追加してください） */
+.mt-0{ margin-top: 0 !important; }
+.mt-10{ margin-top: 10px !important; }
+.mt-20{ margin-top: 20px !important; }
+.mt-40{ margin-top: 40px !important; }
+.mt-neg-10{ margin-top: -10px !important; }
+.mt-neg-20{ margin-top: -20px !important; }
+.mt-neg-40{ margin-top: -40px !important; }
+
+
+/* -------------------------- タイトル -------------------------- */
+h1 {
+    color: #000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #FFF;
+    font-family: Broadway;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-top: 0;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 5px solid #000;
+    white-space: nowrap;
+}
+
+/* ------------------------ 天気予報（上部） ------------------------ */
+.weather-image {
+    aspect-ratio: 1051/215;
+    display: block;
+    margin: 10px auto;
+    transform: translateX(-160px); /* デスクトップで左への移動量を増加 */
+}
+
+.weather {
+    font-family: Candal;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+    margin: 10px 0 0 0;
+    transform: translateX(100px); /* 右に100px移動 */
+}
+
+/* -------------------------- 中央見出し -------------------------- */
+h2 {
+    width: 710px;
+    margin: 45px auto 0 auto;
+    text-align: center;
+    font-family: "Noto Serif JP";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 4.4px;
+}
+
+/* -------------------------- 画像（中央） ------------------------- */
+.center-image {
+    aspect-ratio: 703/466;
+    display: block;
+    margin: 10px auto;
+}
+
+.main-subtext {
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+    margin: 10px 0;
+    letter-spacing: -0.2px;
+}
+
+.main-text {
+    width: 700px;
+    height: 343px;
+    flex-shrink: 0;
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 405;
+    line-height: 33px;
+    letter-spacing: 2.2px;
+    margin: 20px auto 0 auto;
+    text-align: justify;
+}
+
+/* ------------------------ 3カラムレイアウト ------------------------ */
+.columns {
+    display: grid;
+    /* デスクトップでは左右を狭く固定、中央を広くするレイアウトにする */
+    grid-template-columns: 320px 1fr 320px; /* 左(固定) - 中央(流動) - 右(固定) */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0px auto;
+    align-items: start;
+}
+
+/* カラム内の共通リセット */
+.columns img { max-width: 100%; height: auto; display: block; margin: 8px 0; }
+.columns .iwashi-text,
+.columns .paripi-text,
+.columns .megane-text { margin: 0 0 10px 0; }
+.columns .iwashi-subtext,
+.columns .paripi-subtext,
+.columns .megane-subtext,
+.columns .main-text { width: 100%; margin: 0 0 16px 0; }
+
+/* カラム化に合わせ、個別に指定していた左右マージンは無効化 */
+.columns .iwashi-image,
+.columns .iwashi-setumei,
+.columns .iwashi-subtext { margin-left: 0; }
+.columns .paripi-text,
+.columns .paripi-subtext,
+.columns .megane-text,
+.columns .megane-subtext { margin-left: 0; margin-right: 0; }
+.columns .megane-image { max-width: 100%; width: 100%; margin: 30px 0 10px 0; }
+
+@media (max-width: 1000px) {
+    .columns { grid-template-columns: 1fr; max-width: 95%; padding: 0 0px; }
+}
+
+/* カラム毎の余白（デスクトップ向け） */
+.columns .col-left { padding-left: 20px; }
+.columns .col-center { padding: 0 20px; }
+.columns .col-right { padding-right: 20px; }
+
+/* デスクトップ表示で右カラムを上に詰める（必要に応じて値を調整） */
+@media (min-width: 1000px) {
+    .columns .col-right {
+        margin-top: var(--col-right-offset); /* 値は :root の --col-right-offset で制御 */
+    }
+}
+
+/* ------------------------ イワシ関連 ------------------------ */
+.iwashi-text {
+    width: 297px;
+    height: 107px;
+    flex-shrink: 0;
+    font-family: "Noto Serif JP";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 3.52px;
+    margin: 20px 0 0 0;
+}
+
+.iwashi-subtext {
+    width: 318px;
+    height: 521px;
+    flex-shrink: 0;
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 2.2px;
+    margin: 20px 0 0 0;
+    text-align: justify;
+}
+
+.iwashi-image { aspect-ratio: 400/300; margin-top: 50px; }
+.iwashi-setumei { font-family: "Noto Serif JP"; font-size: 16px; line-height: normal; margin-top: 10px; }
+
+/* ---------------------- パリピガエル関連 ---------------------- */
+.paripi-text {
+    width: 319px;
+    height: 105px;
+    flex-shrink: 0;
+    font-family: "Noto Serif JP";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 2.88px;
+    margin: 20px 0 0 0;
+}
+
+.paripi-subtext {
+    width: 318px;
+    height: 521px;
+    flex-shrink: 0;
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 2.2px;
+    margin: 10px 0 0 0;
+    text-align: justify;
+}
+
+/* ------------------------ 虫眼鏡関連 ------------------------ */
+.megane-text {
+    width: 319px;
+    height: 73px;
+    font-family: "Noto Serif JP";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 2.88px;
+    margin: 20px 0 0 0;
+}
+
+.megane-image {
+    aspect-ratio: 154/103;
+    margin-top: 20px;
+    display: block;
+    width: 319px;
+    height: auto;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.megane-subtext {
+    width: 318px;
+    height: 373px;
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 2.2px;
+    margin: 20px 0 100px 0;
+    text-align: justify;
+}
+
+/* ---------------------- レスポンシブ調整 ---------------------- */
+@media (max-width: 900px) {
+    h1 { font-size: 8vw; width: 90%; white-space: normal; }
+    h2 { width: 90%; font-size: 6vw; }
+
+    .weather-image,
+    .center-image,
+    .megane-image,
+    .iwashi-image {
+        display: block;
+        width: 90%;
+        max-width: 700px;
+        margin: 10px auto;
+    }
+
+    .main-subtext,
+    .main-text,
+    .iwashi-text,
+    .iwashi-subtext,
+    .paripi-text,
+    .paripi-subtext,
+    .megane-text,
+    .megane-subtext {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: clamp(28px, 10vw, 56px); }
+    h2 { font-size: 28px; }
+    .date{
+        font-size: 10px;
+        margin-left: 0;
+    }
+
+    .main-text,
+    .iwashi-subtext,
+    .paripi-subtext,
+    .megane-subtext { font-size: 16px; line-height: 1.6; }
+
+    .weather-image,
+    .center-image,
+    .megane-image,
+    .iwashi-image { width: 95%; }
+}
