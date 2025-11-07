@@ -5,7 +5,7 @@
     font-size: 25px;
     font-style: normal;
     line-height: normal;
-    margin-left: 300px;
+    margin-left: 160px;
 }
 
 /* ---------------------- カスタム変数 / ユーティリティ ---------------------- */
@@ -59,7 +59,7 @@ h1 {
     font-style: normal;
     line-height: normal;
     margin: 10px 0 0 0;
-    transform: translateX(150px); /* 右に150px移動 */
+    transform: translateX(155px); /* 右に150px移動 */
 }
 
 /* -------------------------- 中央見出し -------------------------- */
@@ -79,7 +79,7 @@ h2 {
 .center-image {
     aspect-ratio: 703/466;
     display: block;
-    margin: 10px auto;
+    margin: 30px auto;
 }
 
 .main-subtext {
@@ -152,7 +152,7 @@ body {
 
 /* カラム毎の余白（デスクトップ向け）記事間の余白 */
 .columns .col-left { 
-    padding-right: 20px;
+    margin: 55px 20px 0 0;
     width: 100%;
     max-width: 300px;
 }
@@ -201,8 +201,16 @@ body {
     text-align: justify;
 }
 
-.iwashi-image { aspect-ratio: 400/300; margin-top: 50px; }
-.iwashi-setumei { font-family: "Noto Serif JP"; font-size: 16px; line-height: normal; margin-top: 10px; }
+.iwashi-image { 
+    aspect-ratio: 400/300; 
+   padding:80px 0 0 0;/*画像上の余白調整*/
+}
+.iwashi-setumei { 
+    font-family: "Noto Serif JP"; 
+    font-size: 16px; 
+    line-height: normal; 
+    margin-top: 10px; 
+}
 
 /* ---------------------- パリピガエル関連 ---------------------- */
 .paripi-text {
