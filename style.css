@@ -1,8 +1,8 @@
 
 /* --------------------- 基本テキスト・日付 --------------------- */
 .date {
-    font-family: Candal;
-    font-size: 25px;
+    font-family: "Noto Serif JP";
+    font-size:16px;
     font-style: normal;
     line-height: normal;
     margin-left: 160px;
@@ -54,11 +54,14 @@ h1 {
 }
 
 .weather {
-    font-family: Candal;
+    font-family: "Noto Serif JP";
     font-size: 20px;
     font-style: normal;
-    line-height: normal;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 2.2px;
     margin: 10px 0 0 0;
+    text-align: justify;
     transform: translateX(155px); /* 右に150px移動 */
 }
 
@@ -310,19 +313,90 @@ body {
 
 @media (max-width: 480px) {
     h1 { font-size: clamp(28px, 10vw, 56px); }
-    h2 { font-size: 28px; }
-    .date{
+
+    /* h2 と h4（および h4 に用いるテキストクラス）を同じ見た目に揃える（モバイルで中央表示・幅制限） */
+    h2,
+    h4,
+    .iwashi-text,
+    .paripi-text,
+    .megane-text {
+        font-size: clamp(20px, 8vw, 32px);
+        width: 90%;
+        margin: 20px auto 0;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.1;
+    }
+
+    /* カラムを縦に並べたときの余白と幅をリセットして中央揃えにする */
+    .columns .col-left,
+    .columns .col-center,
+    .columns .col-right {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .date {
         font-size: 10px;
         margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .columns {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
     }
 
     .main-text,
     .iwashi-subtext,
     .paripi-subtext,
-    .megane-subtext { font-size: 16px; line-height: 1.6; }
+    .megane-subtext { 
+        font-size: 16px; 
+        line-height: 1.6;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .weather-image,
     .center-image,
     .megane-image,
-    .iwashi-image { width: 95%; }
+    .iwashi-image { 
+        display: block;
+        width: 90%;
+        max-width: 700px;
+        margin: 10px auto;
+        height: auto;
+    }
+
+    .weather {
+        text-align: center;
+        transform: none;
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .iwashi-text,
+    .paripi-text,
+    .megane-text {
+        width: 90%;
+        margin: 20px auto 0;
+        text-align: center;
+        display: block;
+    }
+
+    .iwashi-setumei,
+    .main-subtext,
+    .paripi-subtext,
+    .megane-subtext,
+    .main-text {
+        width: 90%;
+        margin: 12px auto 20px;
+        text-align: center;
+    }
 }
