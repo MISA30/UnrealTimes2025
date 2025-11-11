@@ -49,10 +49,13 @@ h1 {
 .weather-image {
     aspect-ratio: 1051/215;
     display: block;
-    margin: 10px auto;
-    transform: translateX(-160px); /* デスクトップで左への移動量を増加 */
 }
 
+.ame{
+    width: calc(95%-300px);
+    max-width:1400px;
+    margin : 0 auto;
+}
 .weather {
     font-family: "Noto Serif JP";
     font-size: 20px;
@@ -67,7 +70,6 @@ h1 {
 
 /* -------------------------- 中央見出し -------------------------- */
 h2 {
-    width: 710px;
     margin: 45px auto 0 auto;
     text-align: center;
     font-family: "Noto Serif JP";
