@@ -138,7 +138,7 @@ body {
 .columns .iwashi-subtext,
 .columns .paripi-subtext,
 .columns .megane-subtext,
-.columns .main-text { width: 100%; margin: 0 0 16px 0; }
+.columns .main-text { width: 100%; margin: 30px 0 16px 0; }
 
 /* カラム化に合わせ、個別に指定していた左右マージンは無効化 */
 .columns .iwashi-image,
