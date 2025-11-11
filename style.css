@@ -1,7 +1,4 @@
-.container{
-    width: 1338px;
-    margin: 0 auto;
-}
+
 /* --------------------- 基本テキスト・日付 --------------------- */
 .date {
     font-family: "Noto Serif JP";
@@ -283,6 +280,9 @@ body {
 }
 
 /* ---------------------- レスポンシブ調整 ---------------------- */
+@media (max-width: 1338px){
+    margin: 0 auto;
+}
 @media (max-width: 900px) {
     h1 { font-size: 8vw; width: 90%; white-space: normal; }
     h2 { width: 90%; font-size: 6vw; }
