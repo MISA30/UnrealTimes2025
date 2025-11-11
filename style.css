@@ -34,14 +34,14 @@ h1 {
     font-family: Abhaya Libre ExtraBold, "Times New Roman", Times, serif;
     font-size: 128px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 800;
     line-height: normal;
     text-align: center;
     margin-top: 0;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    border-bottom: 5px solid #000;
+    border-bottom: 4px solid #000;
     white-space: nowrap;
 }
 
