@@ -320,7 +320,7 @@ body {
 }
 
 /* ---------------------- スマホ最適化（幅480px以下） ---------------------- */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     /* タイトル調整 */
     h1 { 
         font-size: clamp(28px, 10vw, 56px);
@@ -334,7 +334,7 @@ body {
     h4 {
         font-size: clamp(20px, 8vw, 32px);
         width: calc(100% - 40px);
-        margin: 20px 20px 0;
+        margin: 20px 20px 0; /* 左右20pxで均等 */
         text-align: center;
         white-space: normal;
         line-height: 1.1;
@@ -352,7 +352,7 @@ body {
         height: auto;
     }
 
-    /* 本文・サブテキストは読みやすさ優先 */
+    /* 本文・サブテキストは読みやすさ優先（左右20pxで均等） */
     .main-text,
     .iwashi-subtext,
     .paripi-subtext,
@@ -362,6 +362,15 @@ body {
         width: calc(100% - 40px);
         margin: 12px 20px 20px;
         text-align: justify;
+    }
+
+    /* 記事見出し系も中央揃え＆左右20pxで均等 */
+    .iwashi-text,
+    .paripi-text,
+    .megane-text {
+        width: calc(100% - 40px);
+        margin: 20px 20px 0;
+        text-align: center;
     }
 
     /* 天気テキストも左右20pxに揃える */
@@ -383,6 +392,16 @@ body {
         font-weight: 900;
         line-height: normal;
         letter-spacing: 3.6px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    /* 日付の左右余白も20pxで統一 */
+    .date {
+        font-size: 10px;
+        margin: 0 20px;
+        text-align: left;
+        width: calc(100% - 40px);
     }
 }
 
