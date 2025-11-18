@@ -150,9 +150,7 @@ body {
 .columns .megane-subtext { margin-left: 0; margin-right: 0; }
 .columns .megane-image { max-width: 100%; width: 100%; margin: 30px 0 10px 0; }
 
-@media (max-width: 1000px) {
-    .columns { grid-template-columns: 1fr; max-width: 95%; padding: 0 0px; }
-}
+
 
 /* カラム毎の余白（デスクトップ向け）記事間の余白 */
 .columns .col-left { 
@@ -292,116 +290,72 @@ body {
     h1 { font-size: 8vw; width: 90%; white-space: normal; }
     h2 { width: 90%; font-size: 6vw; }
 
+    .colums.col-center{
+        order: 0;
+          max-width: none;
+        padding-left:0;
+    }
+
+    .columns .col-right{
+        order:1;
+        max-width: none;
+        width:none;
+        padding-left:0;
+        padding-top:300px;
+        text-align: center;
+    }
+
+    .columns .col-left{
+        order:2;
+          max-width: none;
+        padding-left:0;
+        padding-top: -30px;
+        
+    }
+
+
+    .columns{
+        display: flex;
+        flex-direction: column;
+    }
     .weather-image,
     .center-image,
-    .megane-image,
-    .iwashi-image {
+    .megane-image {
         display: block;
         width: 90%;
         max-width: 700px;
         margin: 10px auto;
     }
-
-    .main-subtext,
-    .main-text,
-    .iwashi-text,
-    .iwashi-subtext,
-    .paripi-text,
-    .paripi-subtext,
-    .megane-text,
-    .megane-subtext {
+    .iwashi-image {
+        display: block;
         width: 90%;
+        max-width: 400px;
+        margin: 10px auto;
+        margin-top:100px;
+    }
+    .paripi-subtext,
+    .iwashi-subtext,
+    .megane-subtext {
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-top: 10px;
+        height: 270px;
+    }
+
+
+    .main-text .iwashi-text .megane-text .paripi-text
+    { width:none;
         margin-left: auto;
         margin-right: auto;
         font-size: 18px;
         line-height: 1.6;
         margin-top: 10px;
     }
-}
 
-/* ---------------------- スマホ最適化（幅480px以下） ---------------------- */
-@media (max-width: 500px) {
-    /* タイトル調整 */
-    h1 { 
-        font-size: clamp(28px, 10vw, 56px);
-        border-bottom: none; /* 下線を削除 */
-        width: calc(100% - 40px);
-        margin: 0 20px;
-    }
-
-    /* 見出しを中央揃え＆左右20pxガターに揃える */
-    h2,
-    h4 {
-        font-size: clamp(20px, 8vw, 32px);
-        width: calc(100% - 40px);
-        margin: 20px 20px 0; /* 左右20pxで均等 */
-        text-align: center;
-        white-space: normal;
-        line-height: 1.1;
-    }
-
-    /* 画像は左右20pxの余白で統一 */
-    .weather-image,
-    .center-image,
-    .megane-image,
-    .iwashi-image { 
-        display: block;
-        width: calc(100% - 40px);
-        max-width: none;
-        margin: 10px 20px;
-        height: auto;
-    }
-
-    /* 本文・サブテキストは読みやすさ優先（左右20pxで均等） */
-    .main-text,
-    .iwashi-subtext,
-    .paripi-subtext,
-    .megane-subtext { 
-        font-size: 16px; 
-        line-height: 1.6;
-        width: calc(100% - 40px);
-        margin: 12px 20px 20px;
-        text-align: justify;
-    }
-
-    /* 記事見出し系も中央揃え＆左右20pxで均等 */
-    .iwashi-text,
-    .paripi-text,
-    .megane-text {
-        width: calc(100% - 40px);
-        margin: 20px 20px 0;
-        text-align: center;
-    }
-
-    /* 天気テキストも左右20pxに揃える */
-    .weather {
-        text-align: justify;
-        transform: none;
-        width: calc(100% - 40px);
-        margin: 10px 20px;
-    }
-
-    /* h4を指定サイズで上書き（はみ出しは抑制） */
-    h4 {
-        width: 740px;
-        max-width: calc(100% - 40px);
-        height: 65px;
-        flex-shrink: 0;
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: normal;
-        letter-spacing: 3.6px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    /* 日付の左右余白も20pxで統一 */
-    .date {
-        font-size: 10px;
-        margin: 0 20px;
-        text-align: left;
-        width: calc(100% - 40px);
-    }
+     
 }
 
