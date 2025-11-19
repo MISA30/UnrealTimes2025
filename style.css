@@ -290,7 +290,7 @@ body {
     h1 { font-size: 8vw; width: 90%; white-space: normal; }
     h2 { width: 90%; font-size: 6vw; }
 
-    .colums.col-center{
+    .columns .col-center{
         order: 0;
           max-width: none;
         padding-left:0;
@@ -347,7 +347,10 @@ body {
     }
 
 
-    .main-text .iwashi-text .megane-text .paripi-text
+    .main-text,
+    .iwashi-text,
+    .megane-text,
+    .paripi-text
     { width:none;
         margin-left: auto;
         margin-right: auto;
@@ -356,6 +359,10 @@ body {
         margin-top: 10px;
     }
 
-     
+     .weather{
+        width:90%; 
+        font-size:18px;
+        letter-spacing: normal;
+     }
 }
 
