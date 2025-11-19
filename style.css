@@ -287,7 +287,7 @@ body {
 }
 
 @media (max-width: 900px) {
-    h1 { font-size: 8vw; width: 90%; white-space: normal; }
+    h1 { font-size: 8vw; width: 90%; white-space: normal;-webkit-text-stroke-width: 0.5px; }
     h2 { width: 90%; font-size: 6vw; }
 
     .columns .col-center{
@@ -329,9 +329,7 @@ body {
     .iwashi-image {
         display: block;
         width: 90%;
-        max-width: 400px;
-        margin: 10px auto;
-        margin-top:100px;
+        padding-left:10px;/*画面上の画像の余白調整*/
     }
     .paripi-subtext,
     .iwashi-subtext,
@@ -356,7 +354,7 @@ body {
         margin-right: auto;
         font-size: 18px;
         line-height: 1.6;
-        margin-top: 10px;
+        padding-top:30px;
     }
 
      .weather{
