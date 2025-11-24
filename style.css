@@ -340,6 +340,9 @@ body {
         width: 90%;
         padding-left:10px;/*画面上の画像の余白調整*/
     }
+
+    
+    .main-text,
     .paripi-subtext,
     .iwashi-subtext,
     .megane-subtext {
@@ -353,15 +356,13 @@ body {
         height: 270px;
     }
 
-
-    .main-text,
     .iwashi-text,
     .megane-text,
     .paripi-text
     { width:none;
         margin-left: auto;
         margin-right: auto;
-        font-size: 18px;
+        font-size: 25px;
         line-height: 1.6;
         padding-top:90px;
         height: auto; /* 比率維持 */
