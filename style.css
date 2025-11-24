@@ -328,20 +328,21 @@ body {
         flex-direction: column;
     }
     .weather-image,
-    .center-image,
     .megane-image {
-        display: block;
         width: 90%;
-        max-width: 700px;
-        margin: 10px auto;
+
     }
     .iwashi-image {
         display: block;
         width: 90%;
-        padding-left:10px;/*画面上の画像の余白調整*/
+        padding: 150px 0 0 10px; /* 画像上の余白調整：サブテキストと重ならないように増量 */
+    
     }
 
-    
+    .center-image{
+        width:90%;
+        padding: 0 0 0 15px;
+    }
     .main-text,
     .paripi-subtext,
     .iwashi-subtext,
@@ -350,7 +351,7 @@ body {
         margin-left: auto;
         margin-right: auto;
         font-size: 18px;
-        line-height: 1.6;
+        line-height: 1.5;
         margin-top: 10px;
         height: 270px;
     }
@@ -376,10 +377,11 @@ body {
      }
 
      .main-subtext{
-        font-size:18px;
+        font-size:16px;
         letter-spacing: normal;
          height: auto; /* 比率維持 */
         margin: 10px auto; /* 中央寄せ */
+        padding: 0 0 0 14px;/*左の余白調整*/
      }
 }
 
