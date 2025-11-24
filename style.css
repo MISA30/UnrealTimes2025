@@ -364,12 +364,15 @@ body {
         font-size: 18px;
         line-height: 1.6;
         padding-top:90px;
+        height: auto; /* 比率維持 */
     }
 
      .weather{
         width:90%; 
         font-size:18px;
         letter-spacing: normal;
+         height: auto; /* 比率維持 */
+        margin: 10px auto; /* 中央寄せ */
      }
 }
 
