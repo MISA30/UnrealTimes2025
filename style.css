@@ -334,14 +334,13 @@ body {
     }
     .iwashi-image {
         display: block;
-        width: 90%;
-        padding: 150px 0 0 10px; /* 画像上の余白調整：サブテキストと重ならないように増量 */
+        width: 100%;
+        padding: 150px 0 0 0px; /* 画像上の余白調整：サブテキストと重ならないように増量 */
     
     }
 
     .center-image{
-        width:90%;
-        padding: 0 0 0 15px;
+        width:100%;
     }
     .main-text,
     .paripi-subtext,
