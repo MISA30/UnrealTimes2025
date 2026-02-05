@@ -99,7 +99,7 @@ h2 {
 
 .main-text {
     width: 700px;
-    height: auto;
+    height: 343px;
     flex-shrink: 0;
     font-family: "Noto Serif JP";
     font-size: 20px;
@@ -181,7 +181,7 @@ body {
 /* ------------------------ イワシ関連 ------------------------ */
 .iwashi-text {
     width: 297px;
-    height: auto;
+    height: 107px;
     flex-shrink: 0;
     font-family: "Noto Serif JP";
     font-size: 32px;
@@ -194,7 +194,7 @@ body {
 
 .iwashi-subtext {
     width: 318px;
-    height: auto;
+    height: 521px;
     flex-shrink: 0;
     font-family: "Noto Serif JP";
     font-size: 20px;
@@ -208,6 +208,7 @@ body {
 
 .iwashi-image { 
     aspect-ratio: 400/300; 
+   padding:80px 0 0 0;/*画像上の余白調整*/
 }
 .iwashi-setumei { 
     font-family: "Noto Serif JP"; 
@@ -219,7 +220,7 @@ body {
 /* ---------------------- パリピガエル関連 ---------------------- */
 .paripi-text {
     width: 319px;
-    height: auto;
+    height: 105px;
     flex-shrink: 0;
     font-family: "Noto Serif JP";
     font-size: 32px;
@@ -232,7 +233,7 @@ body {
 
 .paripi-subtext {
     width: 318px;
-    height: auto;
+    height: 521px;
     flex-shrink: 0;
     font-family: "Noto Serif JP";
     font-size: 20px;
@@ -247,7 +248,7 @@ body {
 /* ------------------------ 虫眼鏡関連 ------------------------ */
 .megane-text {
     width: 319px;
-    height: auto;
+    height: 73px;
     font-family: "Noto Serif JP";
     font-size: 32px;
     font-style: normal;
@@ -269,7 +270,7 @@ body {
 
 .megane-subtext {
     width: 318px;
-    height: auto;
+    height: 373px;
     font-family: "Noto Serif JP";
     font-size: 20px;
     font-style: normal;
@@ -286,7 +287,7 @@ body {
         margin: 0 auto;
     }
 }
-/* スマホ・タブレット向け調整 */
+
 @media (max-width: 900px) {
     h1 { font-size: 8vw; width: 90%; white-space: normal;-webkit-text-stroke-width: 0.5px; }
     h2 { width: 90%; font-size: 6vw; }
@@ -305,11 +306,12 @@ body {
     }
 
     .columns .col-right{
-        order: 1;
+        order:1;
         max-width: none;
-        padding-left: 0;
+        width:none;
+        padding-left:0;
+        padding-top:300px;
         text-align: center;
-        margin-top: 20px; /* 中央記事の直後に自然な余白で追従 */
     }
 
     .columns .col-left{
@@ -333,6 +335,7 @@ body {
     .iwashi-image {
         display: block;
         width: 100%;
+        padding: 150px 0 0 0px; /* 画像上の余白調整：サブテキストと重ならないように増量 */
     
     }
 
@@ -340,6 +343,7 @@ body {
         width:100%;
     }
     .main-text,
+    .paripi-subtext,
     .iwashi-subtext,
     .megane-subtext {
         width: 100%;
@@ -348,20 +352,7 @@ body {
         font-size: 18px;
         line-height: 1.5;
         margin-top: 10px;
-    }
-
-    /* main-text は可変高さにして右カラムが直後に配置されるようにする */
-    .main-text { height: auto; }
-
-    /* パリピサブテキストはモバイルでも自動伸長 */
-    .paripi-subtext {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 18px;
-        line-height: 1.5;
-        margin-top: 10px;
-        height: auto;
+        height: 270px;
     }
 
     .iwashi-text
@@ -380,7 +371,7 @@ body {
         margin-right: auto;
         font-size: 25px;
         line-height: 1.6;
-        padding: 40px 0 0 0;
+        padding: 80px 0 0 0;
         height: auto; /* 比率維持 */
     }
 
