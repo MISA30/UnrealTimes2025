@@ -16,6 +16,8 @@
     --spacing-unit: 10px;
     /* デスクトップ天気画像の希望幅（必要に応じて調整） */
     --weather-image-desktop-width: 600px;
+    /* オーバレイの不透明度（0.0〜1.0） */
+    --overlay-opacity: 0.6;
 }
 
 /* 簡易ユーティリティ：上マージン調整（必要に応じてクラスを追加してください） */
@@ -117,6 +119,8 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    position: relative; /* 擬似要素の重なり順制御用 */
+    z-index: 0;        /* 本文を基準スタックに */
 }
 
 .columns {
@@ -400,4 +404,21 @@ body {
         padding: 0 0 0 14px;/*左の余白調整*/
      }
 }
+
+/* ---------------------- 最背面の背景画像（擬似要素） ---------------------- */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("unrealtimes picture/スクリーンショット 2026-02-05 094246.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; /* 本文より背面に配置 */
+    opacity: var(--overlay-opacity, 0.9);
+    pointer-events: none; /* 背景なので操作は通す */
+}
+
+/* 既存の前面オーバレイは無効化（必要なら復活可） */
+#image-overlay { display: none; }
 
